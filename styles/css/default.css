@@ -1,3 +1,6 @@
+/*
+Reset some base stuff
+*/
 body, html {
     width: 100%;
     height: 100%;
@@ -10,23 +13,60 @@ div, p {
     margin: 0;
 }
 
-div.even, div.odd {
-    min-height: 20%;
+/*
+Header
+*/
+header {
+    border-bottom: 1px solid gray;
+    overflow: hidden;
+    padding: 1%;
+}
+header h1 {
+    float: left;
+}
+header nav {
+    float: right;
+    font-size: 1.5em;
+}
+header h1,
+header nav,
+header nav ul {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+header nav ul li {
+    display: inline;
+    padding-right: 20px;
+    padding-left: 20px;
 }
 
+
+
+/*
+Content sections
+*/
+div.even, div.odd {
+    min-height: 20%;
+    padding-right: 20%;
+    padding-left: 20%;
+}
 div.even {
     width: 100%;
 }
 div.odd {
     width: 100%;
 }
-
 div.transition1 {
     height: 15%;
     width: 100%;
 }
-
 div.transition2 {
     height: 15%;
     width: 100%;
+}
+div.even h2, div.odd h2 {
+    margin-top: 0px;
+}
+div.spaced {
+    padding-top: 30px;
 }

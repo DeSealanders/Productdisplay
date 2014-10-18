@@ -1,10 +1,11 @@
 <?php
 header("Content-type: text/css; charset: UTF-8");
 
-$colorEven = "#2c3e50";
-$colorOdd = "white";
-$textColorEven = 'white';
-$textColorOdd = '#333';
+$colorEven = "white";
+$colorOdd = "#2c3e50";
+$textColorEven = '#333';
+$textColorOdd = 'white';
+$headerColor = 'darkorange';
 ?>
 
 div.even {
@@ -22,4 +23,8 @@ div.transition1 {
 
 div.transition2 {
     background: linear-gradient(-2deg, <?php echo $colorEven;?> 49%, <?php echo $colorOdd;?> 50%);
+}
+
+header h1 {
+    color: <?php echo $headerColor; ?>;
 }

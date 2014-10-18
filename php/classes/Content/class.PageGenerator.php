@@ -10,9 +10,9 @@ class PageGenerator {
         $this->header = array(
             'title' => 'Dit is een test',
             'menu' => array(
-                'Fred aan het woord' => '#Fred',
-                'Piet-vision' => '#Piet',
-                'Anitas howto' => '#Anita',
+                'Fred' => '#Fred',
+                'Piet' => '#Piet',
+                'Anita' => '#Anita',
             )
         );
         $this->sections = array(
@@ -61,6 +61,7 @@ class PageGenerator {
 
     public function getContentHtml() {
         $html = '';
+        $transitioned = false;
         foreach($this->sections as $key => $section) {
             if($key % 2 == 0) {
                 $class = 'even';
@@ -68,17 +69,25 @@ class PageGenerator {
             else {
                 $class = 'odd';
             }
+            if($transitioned == false) {
+                $class .= ' spaced';
+            }
             $html .= '<div class="' . $class . '" id="' . $section['title'] . '">';
+            $html .= '<h2>' . $section['title'] . '</h2>';
             $html .= $section['html'];
             $html .= '</div>';
 
             if($section['transition'] == true) {
+                $transitioned = true;
                 if($key % 2 == 0) {
                     $html .= '<div class="transition1"></div>';
                 }
                 else {
                     $html .= '<div class="transition2"></div>';
                 }
+            }
+            else {
+                $transitioned = false;
             }
         }
         return $html;
