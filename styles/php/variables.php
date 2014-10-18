@@ -11,14 +11,16 @@ $navTextColor = $header->getNavTextColor();
 $navTextHoverColor = $header->getNavTextHoverColor();
 
 // Content
-$colorEven = "white";
-$colorOdd = "#2c3e50";
-$textColorEven = '#333';
-$textColorOdd = 'white';
+$sections = ElementFactory::getInstance()->getSections();
+$colorEven = $sections->getColorEven();
+$colorOdd = $sections->getColorOdd();
+$textColorEven = $sections->getTextColorEven();
+$textColorOdd = $sections->getTextColorOdd();
 
 // Footer
-$footerColorEven = 'gray';
-$footerColorOdd = 'white';
+$footer = ElementFactory::getInstance()->getFooter();
+$footerColorEven = $footer->getFooterColorEven();
+$footerColorOdd = $footer->getFooterColorOdd();
 ?>
 
 <?php /* Header */ ?>
