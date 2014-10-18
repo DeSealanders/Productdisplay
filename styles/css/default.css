@@ -40,8 +40,6 @@ header nav ul li {
     padding-left: 20px;
 }
 
-
-
 /*
 Content sections
 */
@@ -69,4 +67,25 @@ div.even h2, div.odd h2 {
 }
 div.spaced {
     padding-top: 30px;
+}
+
+/*
+Footer
+*/
+footer {
+    text-align: center;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+footer p {
+    color: gray;
+    letter-spacing: 3px;
+}
+footer ul li {
+    display: inline;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+footer ul li a:hover {
+    text-decoration: none;
 }

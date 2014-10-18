@@ -6,13 +6,17 @@ $colorOdd = "#2c3e50";
 $textColorEven = '#333';
 $textColorOdd = 'white';
 $headerColor = 'darkorange';
+$footerColorEven = 'gray';
+$footerColorOdd = 'white';
 ?>
 
-div.even {
+div.even,
+footer.even {
     color: <?php echo $textColorEven; ?>;
     background-color: <?php echo $colorEven;?>;
 }
-div.odd {
+div.odd,
+footer.odd {
     color: <?php echo $textColorOdd; ?>;
     background-color: <?php echo $colorOdd;?>;
 }
@@ -27,4 +31,10 @@ div.transition2 {
 
 header h1 {
     color: <?php echo $headerColor; ?>;
+}
+footer.odd ul li a {
+    color: <?php echo $textColorOdd; ?>;
+}
+footer.even ul li a {
+    color: <?php echo $footerColorEven; ?>;
 }

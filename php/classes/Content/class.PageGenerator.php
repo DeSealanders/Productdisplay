@@ -106,13 +106,19 @@ class PageGenerator {
     }
 
     public function getFooterHtml() {
-        $html = '<footer>';
+        if(count($this->sections) % 2 == 0) {
+            $class = 'even';
+        }
+        else {
+            $class = 'odd';
+        }
+        $html = '<footer class="' . $class . '">';
         $html .= '<ul>';
-        foreach($this->footer['socialmedia'] as $text => $link) {
-            $html .= '<li><a href="' . $link . '">' . $text . '</a></li>';
+        foreach($this->footer['socialmedia'] as $type => $link) {
+            $html .= '<li><a <a class="fa fa-' . $type . ' fa-2x" target="_blank" href="' . $link . '"></a></li>';
         }
         $html .= '</ul>';
-        $html .= $this->footer['text'] .  ' &copy; ' . date('Y', time());
+        $html .= '<p>' . $this->footer['text'] .  ' &copy; ' . date('Y', time()) . '</p>';
         $html .= '</footer>';
         return $html;
     }
