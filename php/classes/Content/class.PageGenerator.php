@@ -6,44 +6,10 @@ class PageGenerator {
     private $sections;
     private $footer;
 
-    public function __construct() {
-        $this->header = array(
-            'title' => 'Dit is een test',
-            'menu' => array(
-                'Fred' => '#Fred',
-                'Piet' => '#Piet',
-                'Anita' => '#Anita',
-            )
-        );
-        $this->sections = array(
-            array(
-                'html' => '<p>Fred is een boer</p>',
-                'title' => 'Fred',
-                'transition' => false
-            ),
-            array(
-                'html' => '<p>Henk houdt van aardappels</p>',
-                'title' => 'Henk',
-                'transition' => true
-            ),
-            array(
-                'html' => '<p>Piet wilt appels plukken</p>',
-                'title' => 'Piet',
-                'transition' => true
-            ),
-            array(
-                'html' => '<p>Anita eet graag koekjes</p>',
-                'title' => 'Anita',
-                'transition' => false
-            ),
-        );
-        $this->footer = array(
-            'text' => 'Product display',
-            'socialmedia' => array(
-                'twitter' => 'http://www.twitter.com/ptrton',
-                'facebook' => 'http://www.facebook.com/ptrton',
-            )
-        );
+    private function __construct() {
+        $this->header = ElementFactory::getInstance()->getHeader();
+        $this->sections = ElementFactory::getInstance()->getSections();
+        $this->footer = ElementFactory::getInstance()->getFooter();
     }
 
     /**
@@ -62,7 +28,7 @@ class PageGenerator {
     public function getContentHtml() {
         $html = '';
         $transitioned = false;
-        foreach($this->sections as $key => $section) {
+        foreach($this->sections->getSections() as $key => $section) {
             if($key % 2 == 0) {
                 $class = 'even';
             }
@@ -72,12 +38,12 @@ class PageGenerator {
             if($transitioned == false) {
                 $class .= ' spaced';
             }
-            $html .= '<div class="' . $class . '" id="' . $section['title'] . '">';
-            $html .= '<h2>' . $section['title'] . '</h2>';
-            $html .= $section['html'];
+            $html .= '<div class="' . $class . '" id="' . $section->getTitle() . '">';
+            $html .= '<h2>' . $section->getTitle() . '</h2>';
+            $html .= $section->getHtml();
             $html .= '</div>';
 
-            if($section['transition'] == true) {
+            if($section->getTransition() == true) {
                 $transitioned = true;
                 if($key % 2 == 0) {
                     $html .= '<div class="transition1"></div>';
@@ -95,9 +61,9 @@ class PageGenerator {
 
     public function getHeaderHtml() {
         $html = '<header>';
-        $html .= '<h1>' . $this->header['title'] . '</h1>';
+        $html .= '<h1>' . $this->header->getTitle() . '</h1>';
         $html .= '<nav><ul>';
-        foreach($this->header['menu'] as $text => $link) {
+        foreach($this->header->getMenu() as $text => $link) {
             $html .= '<li><a href="' . $link . '">' . $text . '</a></li>';
         }
         $html .= '</ul></nav>';
@@ -106,7 +72,7 @@ class PageGenerator {
     }
 
     public function getFooterHtml() {
-        if(count($this->sections) % 2 == 0) {
+        if(count($this->sections->getSections()) % 2 == 0) {
             $class = 'even';
         }
         else {
@@ -114,11 +80,11 @@ class PageGenerator {
         }
         $html = '<footer class="' . $class . '">';
         $html .= '<ul>';
-        foreach($this->footer['socialmedia'] as $type => $link) {
+        foreach($this->footer->getSocialmedia() as $type => $link) {
             $html .= '<li><a <a class="fa fa-' . $type . ' fa-2x" target="_blank" href="' . $link . '"></a></li>';
         }
         $html .= '</ul>';
-        $html .= '<p>' . $this->footer['text'] .  ' &copy; ' . date('Y', time()) . '</p>';
+        $html .= '<p>' . $this->footer->getText() .  ' &copy; ' . date('Y', time()) . '</p>';
         $html .= '</footer>';
         return $html;
     }
