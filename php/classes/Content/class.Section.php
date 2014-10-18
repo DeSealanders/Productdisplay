@@ -35,7 +35,7 @@ class Section {
         else {
             $class = 'odd';
         }
-        if($prevSection && !$prevSection->getTransition()) {
+        if(!$prevSection || !$prevSection->getTransition()) {
             $class .= ' spaced';
         }
         $html .= '<div class="' . $class . '" id="' . $this->title. '">';
