@@ -1,6 +1,6 @@
 <?php
 
-class Sections {
+class Sections extends Element {
 
     private $colorEven;
     private $colorOdd;
@@ -9,6 +9,10 @@ class Sections {
     private $sections;
 
     public function __construct() {
+        $this->start = '<div class="sections">';
+        $this->end = '</div>';
+
+        // Set test data
         $this->colorEven = "white";
         $this->colorOdd = "#2c3e50";
         $this->textColorEven = '#333';
@@ -33,7 +37,13 @@ class Sections {
 
     public function getSections()
     {
-        return $this->sections;
+        $html = '';
+        $prevSection = false;
+        foreach($this->sections as $key => $section) {
+            $html .= $section->getHtml($key, $prevSection);
+            $prevSection = $section;
+        }
+        return $html;
     }
 
     public function getTextColorEven()
@@ -44,6 +54,10 @@ class Sections {
     public function getTextColorOdd()
     {
         return $this->textColorOdd;
+    }
+
+    public function getSectionCount() {
+        return count($this->sections);
     }
 
 } 

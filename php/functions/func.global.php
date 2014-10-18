@@ -62,3 +62,12 @@ function isLive()
     }
     return true;
 }
+
+function isEven($key) {
+    if($key % 2 == 0) {
+        return true;
+    }
+    else {
+        return false;
+    }
+}

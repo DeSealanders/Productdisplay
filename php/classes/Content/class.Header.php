@@ -1,6 +1,6 @@
 <?php
 
-class Header {
+class Header extends Element {
 
     private $title;
     private $menu;
@@ -10,6 +10,10 @@ class Header {
     private $navTextHoverColor;
 
     public function __construct() {
+        $this->start = '<header>';
+        $this->end = '</header>';
+
+        // Set test data
         $this->title = 'Dit is een test';
         $this->menu = array(
                 'Fred' => '#Fred',
@@ -22,19 +26,19 @@ class Header {
         $this->navTextHoverColor = 'lightgray';
     }
 
-    public function getHeaderColor()
-    {
-        return $this->headerColor;
-    }
-
-    public function getHeaderTextColor()
-    {
-        return $this->headerTextColor;
-    }
-
     public function getMenu()
     {
-        return $this->menu;
+        $html = '<nav><ul>';
+        foreach($this->menu as $text => $link) {
+            $html .= '<li><a href="' . $link . '">' . $text . '</a></li>';
+        }
+        $html .= '</ul></nav>';
+        return $html;
+    }
+
+    public function getTitle()
+    {
+        return '<h1>' . $this->title . '</h1>';
     }
 
     public function getNavTextColor()
@@ -47,9 +51,14 @@ class Header {
         return $this->navTextHoverColor;
     }
 
-    public function getTitle()
+    public function getHeaderColor()
     {
-        return $this->title;
+        return $this->headerColor;
+    }
+
+    public function getHeaderTextColor()
+    {
+        return $this->headerTextColor;
     }
 
 } 

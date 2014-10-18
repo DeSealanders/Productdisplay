@@ -1,6 +1,6 @@
 <?php
 
-class Footer {
+class Footer extends Element {
 
     private $text;
     private $socialmedia;
@@ -8,6 +8,10 @@ class Footer {
     private $footerColorOdd;
 
     public function __construct() {
+        $this->start = '<footer class="' . $this->getClass() . '">';
+        $this->end = '</footer>';
+
+        // Set test data
         $this->text = 'Product display';
         $this->socialmedia = array(
             'twitter' => 'http://www.twitter.com/ptrton',
@@ -19,12 +23,26 @@ class Footer {
 
     public function getSocialmedia()
     {
-        return $this->socialmedia;
+        $html = '<ul>';
+        foreach($this->socialmedia as $type => $link) {
+            $html .= '<li><a <a class="fa fa-' . $type . ' fa-2x" target="_blank" href="' . $link . '"></a></li>';
+        }
+        $html .= '</ul>';
+        return $html;
     }
 
     public function getText()
     {
-        return $this->text;
+        return '<p>' . $this->text .  ' &copy; ' . date('Y', time()) . '</p>';
+    }
+
+    public function getClass() {
+        if(ElementFactory::getInstance()->getSections()->getSectionCount() % 2 == 0) {
+            return 'even';
+        }
+        else {
+            return 'odd';
+        }
     }
 
     public function getFooterColorEven()
@@ -36,7 +54,5 @@ class Footer {
     {
         return $this->footerColorOdd;
     }
-
-
 
 } 

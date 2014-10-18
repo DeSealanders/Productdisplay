@@ -46,6 +46,10 @@ header nav a:hover {
 /*
 Content sections
 */
+div.sections {
+    overflow: hidden;
+    height: 100%;
+}
 div.even, div.odd {
     min-height: 20%;
     padding-right: 20%;

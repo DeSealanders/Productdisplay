@@ -26,66 +26,25 @@ class PageGenerator {
     }
 
     public function getContentHtml() {
-        $html = '';
-        $transitioned = false;
-        foreach($this->sections->getSections() as $key => $section) {
-            if($key % 2 == 0) {
-                $class = 'even';
-            }
-            else {
-                $class = 'odd';
-            }
-            if($transitioned == false) {
-                $class .= ' spaced';
-            }
-            $html .= '<div class="' . $class . '" id="' . $section->getTitle() . '">';
-            $html .= '<h2>' . $section->getTitle() . '</h2>';
-            $html .= $section->getHtml();
-            $html .= '</div>';
-
-            if($section->getTransition() == true) {
-                $transitioned = true;
-                if($key % 2 == 0) {
-                    $html .= '<div class="transition1"></div>';
-                }
-                else {
-                    $html .= '<div class="transition2"></div>';
-                }
-            }
-            else {
-                $transitioned = false;
-            }
-        }
+        //$html = $this->sections->getStart();
+        $html = $this->sections->getSections();
+        //$html .= $this->sections->getEnd();
         return $html;
     }
 
     public function getHeaderHtml() {
-        $html = '<header>';
-        $html .= '<h1>' . $this->header->getTitle() . '</h1>';
-        $html .= '<nav><ul>';
-        foreach($this->header->getMenu() as $text => $link) {
-            $html .= '<li><a href="' . $link . '">' . $text . '</a></li>';
-        }
-        $html .= '</ul></nav>';
-        $html .= '</header>';
+        $html = $this->header->getStart();
+        $html .= $this->header->getTitle();
+        $html .= $this->header->getMenu();
+        $html .= $this->header->getEnd();
         return $html;
     }
 
     public function getFooterHtml() {
-        if(count($this->sections->getSections()) % 2 == 0) {
-            $class = 'even';
-        }
-        else {
-            $class = 'odd';
-        }
-        $html = '<footer class="' . $class . '">';
-        $html .= '<ul>';
-        foreach($this->footer->getSocialmedia() as $type => $link) {
-            $html .= '<li><a <a class="fa fa-' . $type . ' fa-2x" target="_blank" href="' . $link . '"></a></li>';
-        }
-        $html .= '</ul>';
-        $html .= '<p>' . $this->footer->getText() .  ' &copy; ' . date('Y', time()) . '</p>';
-        $html .= '</footer>';
+        $html = $this->footer->getStart();
+        $html .= $this->footer->getSocialmedia();
+        $html .= $this->footer->getText();
+        $html .= $this->footer->getEnd();
         return $html;
     }
 
