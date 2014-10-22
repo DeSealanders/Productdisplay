@@ -1,0 +1,61 @@
+/*
+Reset some base stuff
+*/
+body, html {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+div, p {
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+/*
+Element
+*/
+.elementHeader {
+    border-bottom: 1px solid black;
+    margin-bottom: 15px;
+    overflow: auto;
+}
+.elementHeader h2 {
+    float: left;
+    margin-bottom: 5px;
+}
+.elementHeader .icon {
+    float: left;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+/*
+Color box default styles
+*/
+.color-box {
+    float:left;
+    width:30px;
+    height:30px;
+    margin:5px;
+    border: 1px solid black;
+}
+
+/*
+Menu items
+*/
+#menuItems .link {
+    float: right;
+}
+#menuItems .highlighted {
+    font-weight: bold;
+    background-color: lightgray;
+}
+#menuItems .dual {
+    display: inline;
+    width: 45%;
+}

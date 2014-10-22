@@ -1,0 +1,34 @@
+<?php
+
+class EditGenerator {
+
+    private function __construct() {
+
+    }
+
+    /**
+     * Function for creating only 1 instance and return that each time its called (singleton)
+     * @return EditGenerator
+     */
+    public static function getInstance()
+    {
+        static $instance = null;
+        if (null === $instance) {
+            $instance = new EditGenerator();
+        }
+        return $instance;
+    }
+
+    public function getHeaderEditor() {
+        echo EditorFactory::getInstance()->getHeaderEditor()->getHtml();
+    }
+
+    public function getContentEditor() {
+
+    }
+
+    public function getFooterEditor() {
+        echo EditorFactory::getInstance()->getFooterEditor()->getHtml();
+    }
+
+} 

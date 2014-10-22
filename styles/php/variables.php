@@ -10,7 +10,7 @@ $headerTextColor = $header->getHeaderTextColor();
 $navTextColor = $header->getNavTextColor();
 $navTextHoverColor = $header->getNavTextHoverColor();
 
-// Content
+// Page
 $sections = ElementFactory::getInstance()->getSections();
 $colorEven = $sections->getColorEven();
 $colorOdd = $sections->getColorOdd();
@@ -38,7 +38,7 @@ header nav a:hover {
     color: <?php echo $navTextHoverColor; ?>;
 }
 
-<?php /* Content sections */ ?>
+<?php /* Page sections */ ?>
 div.even,
 footer.even {
     color: <?php echo $textColorEven; ?>;
