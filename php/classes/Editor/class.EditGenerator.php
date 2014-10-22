@@ -23,8 +23,8 @@ class EditGenerator {
         echo EditorFactory::getInstance()->getHeaderEditor()->getHtml();
     }
 
-    public function getContentEditor() {
-
+    public function getSectionsEditor() {
+        echo EditorFactory::getInstance()->getSectionsEditor()->getHtml();
     }
 
     public function getFooterEditor() {

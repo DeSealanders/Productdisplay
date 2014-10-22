@@ -41,10 +41,10 @@ class PageGenerator {
     }
 
     public function getFooterHtml() {
-        $html = $this->footer->getStart()
-        . $this->footer->getSocialmedia()
-        . $this->footer->getText()
-        . $this->footer->getEnd();
+        $html = $this->footer->getStart();
+        $html .= $this->footer->getSocialmedia();
+        $html .= $this->footer->getText();
+        $html .= $this->footer->getEnd();
         return $html;
     }
 

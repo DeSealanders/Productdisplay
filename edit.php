@@ -20,7 +20,7 @@ require('php/config/conf.default.php');
 <body>
 <?php
     echo EditGenerator::getInstance()->getHeaderEditor();
-    echo EditGenerator::getInstance()->getContentEditor();
+    echo EditGenerator::getInstance()->getSectionsEditor();
     echo EditGenerator::getInstance()->getFooterEditor();
 ?>
 </body>
