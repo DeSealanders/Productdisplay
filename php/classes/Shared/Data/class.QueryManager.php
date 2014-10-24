@@ -31,7 +31,7 @@ class QueryManager {
     }
 
     public function getMenuData($menuId) {
-        $query = "SELECT * FROM menu as m WHERE m.menuId = ?";
+        $query = "SELECT * FROM menu as m WHERE m.headerId = ?";
         $params = array($menuId);
         return DatabaseManager::getInstance()->executeQuery($query, $params);
     }
@@ -41,9 +41,21 @@ class QueryManager {
     }
 
     public function getSocialmediaData($socialmediaId) {
-        $query = "SELECT * FROM socialmedia as s WHERE s.socialmediaId = ?";
+        $query = "SELECT * FROM socialmedia as s WHERE s.footerId = ?";
         $params = array($socialmediaId);
         return DatabaseManager::getInstance()->executeQuery($query, $params);
+    }
+
+    public function getContentData() {
+        $query = "SELECT * FROM content as c";
+        return DatabaseManager::getInstance()->executeQuery($query);
+    }
+
+    public function getSectionData($contentId) {
+        $query = "SELECT * FROM section as s WHERE s.contentId = ?";
+        $params = array($contentId);
+        return DatabaseManager::getInstance()->executeQuery($query, $params);
+
     }
 
 

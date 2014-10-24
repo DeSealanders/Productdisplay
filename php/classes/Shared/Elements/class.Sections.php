@@ -12,17 +12,21 @@ class Sections extends Element {
         $this->startHtml = '<div class="sections">';
         $this->endHtml = '</div>';
 
-        // Set test data
-        $this->colorEven = "white";
-        $this->colorOdd = "#2c3e50";
-        $this->textColorEven = '#333';
-        $this->textColorOdd = 'white';
-        $this->sections = array(
-            new Section('Fred', '<p>Fred is een boer</p>', false),
-            new Section('Henk', '<p>Henk houdt van aardappels</p>', true),
-            new Section('Piet', '<p>Piet wilt appels plukken</p>', true),
-            new Section('Anita', '<p>Anita eet graag koekjes</p>', false),
-        );
+        $data = DataProvider::getInstance()->getContentData();
+
+        // Content data
+        $this->colorEven = $data['contentData']['colorEven'];
+        $this->colorOdd = $data['contentData']['colorOdd'];
+        $this->textColorEven = $data['contentData']['textColorEven'];
+        $this->textColorOdd = $data['contentData']['textColorOdd'];
+
+        // Sections data
+        $this->sections = array();
+        if(count($data['sectionData']) > 0) {
+            foreach($data['sectionData'] as $section) {
+                $this->sections[] = new Section($section['title'], $section['content'], $section['transition']);
+            }
+        }
     }
 
     public function getColorEven()
@@ -35,7 +39,7 @@ class Sections extends Element {
         return $this->colorOdd;
     }
 
-    public function getSections()
+    public function getSectionsHtml()
     {
         $html = '';
         $prevSection = false;
