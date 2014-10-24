@@ -18,12 +18,12 @@ $(document).ready(function () {
     })
 
     // Sorting for menu items
-    $("#sortable").sortable({
+    /*$("#sortable").sortable({
         stop: function(event, ui) {
             //alert("New position: " + ui.item.index());
         }
     });
-    $("#sortable").disableSelection();
+    $("#sortable").disableSelection();*/
 
     // Show/hide for elements (header, footer etc)
     $(document).on('click', '.elementHeader', function(event){

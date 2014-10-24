@@ -12,6 +12,7 @@ class SectionsEditor {
         echo $this->getTextEdit();
         echo $this->getColorEdit();
         // TODO Sections editor
+        echo $this->getSectionsEdit();
         echo getFormEnd();
         echo getElementEnd();
     }
@@ -28,6 +29,13 @@ class SectionsEditor {
         $html = getPanelStart('Background')
         . FormGenerator::getInstance()->getColorSelect('Background color 1', 'colorEven' , '737578')
         . FormGenerator::getInstance()->getColorSelect('Background color 2', 'colorOdd' , 'c2c2c2')
+        . getPanelEnd();
+        return $html;
+    }
+
+    public function getSectionsEdit() {
+        $html = getPanelStart('Sections')
+        . FormGenerator::getInstance()->getTextEditor('Section 1 editor', 'section1edit' , '<h2>Hoi</h2><p>Dit is een test</p>')
         . getPanelEnd();
         return $html;
     }

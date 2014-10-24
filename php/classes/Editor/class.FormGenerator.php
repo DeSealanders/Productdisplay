@@ -31,7 +31,7 @@ class FormGenerator {
     public function getColorSelect($label, $id, $value) {
         $html = '<div class="form-group">'
             . '<label class="control-label col-sm-3" for="' . $id . '">' . $label . '</label>'
-            . '<div class="col-sm-6">'
+            . '<div class="col-sm-8">'
             . '<div id="' . $id . '" data-color="' . $value . '" class="color-box"></div>'
             . '</div></div>';
         return $html;
@@ -40,7 +40,7 @@ class FormGenerator {
     public function getList($label, $id, $values) {
         $html = '<div class="form-group">'
             . '<label class="control-label col-sm-3" for="' . $id . '">' . $label . '</label>'
-            . '<div class="col-sm-6">'
+            . '<div class="col-sm-8">'
             . '<div id="' . $id . '">'
             . '<div class="panel panel-default">'
             . '<div class="highlighted panel-body">'
@@ -60,6 +60,17 @@ class FormGenerator {
         }
         $html .= '</ul></div>
 </div>'
+            . '</div></div>';
+        return $html;
+    }
+
+    public function getTextEditor($label, $id, $value) {
+        $html = '<div class="form-group">'
+            . '<label class="control-label col-sm-3" for="' . $id . '">' . $label . '</label>'
+            . '<div class="col-sm-8">'
+            . '<textarea class="textEditor" id="' . $id . '" cols="60" rows="15">'
+            . $value
+            . '</textarea>'
             . '</div></div>';
         return $html;
     }
