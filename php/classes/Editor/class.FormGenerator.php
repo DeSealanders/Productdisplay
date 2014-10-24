@@ -68,7 +68,7 @@ class FormGenerator {
         $html = '<div class="form-group">'
             . '<label class="control-label col-sm-3" for="' . $id . '">' . $label . '</label>'
             . '<div class="col-sm-8">'
-            . '<textarea class="textEditor" id="' . $id . '" cols="60" rows="15">'
+            . '<textarea class="textEditor" id="' . $id . '" cols="80" rows="15">'
             . $value
             . '</textarea>'
             . '</div></div>';
