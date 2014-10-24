@@ -33,18 +33,18 @@ class PageGenerator {
     }
 
     public function getHeaderHtml() {
-        $html = $this->header->getStart();
-        $html .= $this->header->getTitle();
-        $html .= $this->header->getMenu();
-        $html .= $this->header->getEnd();
+        $html = $this->header->getStartHtml();
+        $html .= $this->header->getTitleHtml();
+        $html .= $this->header->getMenuHtml();
+        $html .= $this->header->getEndHtml();
         return $html;
     }
 
     public function getFooterHtml() {
-        $html = $this->footer->getStart();
-        $html .= $this->footer->getSocialmedia();
-        $html .= $this->footer->getText();
-        $html .= $this->footer->getEnd();
+        $html = $this->footer->getStartHtml();
+        $html .= $this->footer->getSocialmediaHtml();
+        $html .= $this->footer->getTextHtml();
+        $html .= $this->footer->getEndHtml();
         return $html;
     }
 

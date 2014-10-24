@@ -8,20 +8,26 @@ class Footer extends Element {
     private $footerColorOdd;
 
     public function __construct() {
-        $this->start = '<footer class="' . $this->getClass() . '">';
-        $this->end = '</footer>';
+        $this->startHtml = '<footer class="' . $this->getClass() . '">';
+        $this->endHtml = '</footer>';
 
-        // Set test data
-        $this->text = 'Product display';
-        $this->socialmedia = array(
-            'twitter' => 'http://www.twitter.com/ptrton',
-            'facebook' => 'http://www.facebook.com/ptrton',
-        );
-        $this->footerColorEven = 'gray';
-        $this->footerColorOdd = 'white';
+        $data = DataProvider::getInstance()->getFooterData();
+
+        // Footer data
+        $this->text = $data['footerData']['text'];
+        $this->footerColorEven = $data['footerData']['footerColorEven'];
+        $this->footerColorOdd = $data['footerData']['footerColorOdd'];
+
+        // Socialmedia data
+        $this->socialmedia = array();
+        if(count($data['socialmediaData']) > 0) {
+            foreach($data['socialmediaData'] as $socialmediaItem) {
+                $this->socialmedia[$socialmediaItem['media']] = $socialmediaItem['link'];
+            }
+        }
     }
 
-    public function getSocialmedia()
+    public function getSocialmediaHtml()
     {
         $html = '<ul>';
         foreach($this->socialmedia as $type => $link) {
@@ -31,7 +37,7 @@ class Footer extends Element {
         return $html;
     }
 
-    public function getText()
+    public function getTextHtml()
     {
         return '<p>' . $this->text .  ' &copy; ' . date('Y', time()) . '</p>';
     }

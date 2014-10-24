@@ -9,8 +9,8 @@ class Sections extends Element {
     private $sections;
 
     public function __construct() {
-        $this->start = '<div class="sections">';
-        $this->end = '</div>';
+        $this->startHtml = '<div class="sections">';
+        $this->endHtml = '</div>';
 
         // Set test data
         $this->colorEven = "white";

@@ -24,7 +24,7 @@ class MiscEditor {
     }
 
     public function getSeoEdit() {
-        $html = getPanelStart('SEO (search engine optimalisation)')
+        $html = getPanelStart('Search engine optimalisation)')
         . FormGenerator::getInstance()->getTextField('Meta tags', 'headerTitle' , 'Rookworstwaren©')
         . FormGenerator::getInstance()->getTextField('Meta description', 'headerTitle' , 'Rookworstwaren©')
         . getPanelEnd();

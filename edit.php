@@ -31,7 +31,7 @@ require('php/config/conf.default.php');
 
     <?php /* Backend stylesheets and documentready */ ?>
     <link rel="stylesheet" type="text/css" href="styles/css/editor.css">
-    <script src="js/documentready.js"></script>
+    <script src="js/documentready_editor.js"></script>
 
     <title>Beheer</title>
 </head>

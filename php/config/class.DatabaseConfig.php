@@ -24,7 +24,7 @@ class DatabaseConfig {
         return array(
             'username' => 'root',
             'password' => 'usbw',
-            'database' => 'planner',
+            'database' => 'productdisplay',
             'address' => 'localhost'
         );
     }

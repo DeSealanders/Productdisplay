@@ -10,23 +10,28 @@ class Header extends Element {
     private $navTextHoverColor;
 
     public function __construct() {
-        $this->start = '<header>';
-        $this->end = '</header>';
+        $this->startHtml = '<header>';
+        $this->endHtml = '</header>';
 
-        // Set test data
-        $this->title = 'Dit is een test';
-        $this->menu = array(
-                'Fred' => '#Fred',
-                'Piet' => '#Piet',
-                'Anita' => '#Anita',
-            );
-        $this->headerColor = 'white';
-        $this->headerTextColor = 'darkorange';
-        $this->navTextColor = 'gray';
-        $this->navTextHoverColor = 'lightgray';
+        $data = DataProvider::getInstance()->getHeaderData();
+
+        // Header data
+        $this->title = $data['headerData']['title'];
+        $this->headerColor = $data['headerData']['headerColor'];
+        $this->headerTextColor = $data['headerData']['headerTextColor'];
+        $this->navTextColor = $data['headerData']['navTextColor'];
+        $this->navTextHoverColor = $data['headerData']['navTextHoverColor'];
+
+        // Menu data
+        $this->menu = array();
+        if(count($data['menuData']) > 0) {
+            foreach($data['menuData'] as $menuItem) {
+                $this->menu[$menuItem['text']] = $menuItem['link'];
+            }
+        }
     }
 
-    public function getMenu()
+    public function getMenuHtml()
     {
         $html = '<nav><ul>';
         foreach($this->menu as $text => $link) {
@@ -36,7 +41,7 @@ class Header extends Element {
         return $html;
     }
 
-    public function getTitle()
+    public function getTitleHtml()
     {
         return '<h1>' . $this->title . '</h1>';
     }
