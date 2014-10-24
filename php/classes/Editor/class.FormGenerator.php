@@ -23,7 +23,7 @@ class FormGenerator {
         $html = '<div class="form-group">'
                 . '<label class="control-label col-sm-3" for="' . $id . '">' . $label . '</label>'
                 . '<div class="col-sm-4">'
-                . '<input class="form-control" id="' . $id . '" type="text" placeholder="' . $value . '">'
+                . '<input class="form-control" id="' . $id . '" type="text" value="' . $value . '">'
                 . '</input></div></div>';
         return $html;
     }

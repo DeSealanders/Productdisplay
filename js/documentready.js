@@ -30,11 +30,13 @@ $(document).ready(function () {
         event.preventDefault();
         $(this).find('.icon').first().toggleClass("glyphicon glyphicon-plus");
         $(this).find('.icon').first().toggleClass("glyphicon glyphicon-minus");
-        //$(this).toggleClass("icon glyphicon glyphicon-plus");
-        //$(this).toggleClass("icon glyphicon glyphicon-minus");
-        $(this).next('.element').toggle();
+        $(this).next('.element').slideToggle('slow');
     });
 
     // Hide all elements initially
-    $('.elementHeader').each(function() { $(this).click(); })
+    $('.element').each(function() {
+        $(this).hide();
+        $(this).prev('.elementHeader').find('.icon').first().toggleClass("glyphicon glyphicon-minus");
+        $(this).prev('.elementHeader').find('.icon').first().toggleClass("glyphicon glyphicon-plus");
+    })
 });
