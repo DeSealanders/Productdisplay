@@ -27,7 +27,7 @@ class PageGenerator {
 
     public function getContentHtml() {
         //$html = $this->sections->getStart();
-        $html = $this->sections->getSections();
+        $html = $this->sections->getSectionsHtml();
         //$html .= $this->sections->getEnd();
         return $html;
     }

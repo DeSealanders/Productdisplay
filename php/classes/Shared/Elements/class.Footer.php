@@ -15,6 +15,8 @@ class Footer extends Element {
 
         // Footer data
         $this->text = $data['footerData']['text'];
+        $this->footerTextColor = $data['footerData']['footerTextColor'];
+        $this->footerLinkColor = $data['footerData']['footerLinkColor'];
         $this->footerColorEven = $data['footerData']['footerColorEven'];
         $this->footerColorOdd = $data['footerData']['footerColorOdd'];
 
@@ -49,6 +51,16 @@ class Footer extends Element {
         else {
             return 'odd';
         }
+    }
+
+    public function getFooterTextColor()
+    {
+        return $this->footerTextColor;
+    }
+
+    public function getFooterLinkColor()
+    {
+        return $this->footerLinkColor;
     }
 
     public function getFooterColorEven()

@@ -11,6 +11,7 @@ class FooterEditor {
         echo getFormStart();
         echo $this->getTextEdit();
         echo $this->getColorEdit();
+        echo $this->getSocialMediaEdit();
         // TODO social media elements
         echo getFormEnd();
         echo getElementEnd();
@@ -29,6 +30,13 @@ class FooterEditor {
         . FormGenerator::getInstance()->getColorSelect('Footer color 1', 'footerColorEven' , '737578')
         . FormGenerator::getInstance()->getColorSelect('Footer color 2', 'footerColorOdd' , 'c2c2c2')
         . getPanelEnd();
+        return $html;
+    }
+
+    public function getSocialMediaEdit() {
+        $html = getPanelStart('Social media')
+            . FormGenerator::getInstance()->getColorSelect('Social media color', 'socialmediaColor' , '737578')
+            . getPanelEnd();
         return $html;
     }
 } 

@@ -21,6 +21,8 @@ $textColorOdd = $sections->getTextColorOdd();
 $footer = ElementFactory::getInstance()->getFooter();
 $footerColorEven = $footer->getFooterColorEven();
 $footerColorOdd = $footer->getFooterColorOdd();
+$footerLinkColor = $footer->getFooterLinkColor();
+$footerTextColor = $footer->getFooterTextColor();
 ?>
 
 <?php /* Header */ ?>
@@ -57,9 +59,15 @@ div.transition2 {
 }
 
 <?php /* Footer */ ?>
-footer.odd ul li a {
-    color: <?php echo $textColorOdd; ?>;
+footer.odd {
+    background-color: <?php echo $footerColorOdd; ?>;
 }
-footer.even ul li a {
-    color: <?php echo $footerColorEven; ?>;
+footer.even {
+    background-color: <?php echo $footerColorEven; ?>;
+}
+footer ul li a {
+    color: <?php echo $footerLinkColor; ?>
+}
+footer {
+    color: <?php echo $footerTextColor; ?>
 }
