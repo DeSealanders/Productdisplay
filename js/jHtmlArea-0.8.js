@@ -73,15 +73,15 @@
                 elem.jhtmlareaObject = this;
 
                 var textarea = this.textarea = $(elem);
-                var container = this.container = $("<div/>").addClass("jHtmlArea").width('100%').insertAfter(textarea);
+                var container = this.container = $("<div/>").addClass("jHtmlArea").width('98%').insertAfter(textarea);
 
                 var toolbar = this.toolbar = $("<div/>").addClass("ToolBar").appendTo(container);
                 priv.initToolBar.call(this, opts);
 
                 var iframe = this.iframe = $("<iframe/>").height(textarea.height());
-                iframe.width(textarea.width());
+                iframe.width('96%');
 
-                var htmlarea = this.htmlarea = $("<div/>").append(iframe);
+                var htmlarea = this.htmlarea = $("<div/>").width('100%').append(iframe);
 
                 container.append(htmlarea).append(textarea.hide());
 
@@ -90,7 +90,7 @@
 
                 // Fix total height to match TextArea
                 iframe.height(iframe.height() - toolbar.height());
-                toolbar.width(textarea.width());
+                toolbar.width('100%');
                 
 
                 if (opts.loaded) { opts.loaded.call(this); }

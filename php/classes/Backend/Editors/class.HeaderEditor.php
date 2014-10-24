@@ -31,7 +31,7 @@ class HeaderEditor {
                 'Piet' => '#Piet',
                 'Anita' => '#Anita',
             ))
-        . FormGenerator::getInstance()->getColorSelect('Text color', 'navTextColor' , '737578')
+        . FormGenerator::getInstance()->getColorSelect('Text color', 'navTextColor' , '61656b')
         . FormGenerator::getInstance()->getColorSelect('Text hover color', 'navTextColorHover' , 'c2c2c2')
         . getPanelEnd();
         return $html;

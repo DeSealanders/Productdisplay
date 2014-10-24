@@ -27,7 +27,7 @@ class FooterEditor {
 
     public function getColorEdit() {
         $html = getPanelStart('Background')
-        . FormGenerator::getInstance()->getColorSelect('Footer color 1', 'footerColorEven' , '737578')
+        . FormGenerator::getInstance()->getColorSelect('Footer color 1', 'footerColorEven' , '61656b')
         . FormGenerator::getInstance()->getColorSelect('Footer color 2', 'footerColorOdd' , 'c2c2c2')
         . getPanelEnd();
         return $html;
@@ -35,7 +35,7 @@ class FooterEditor {
 
     public function getSocialMediaEdit() {
         $html = getPanelStart('Social media')
-            . FormGenerator::getInstance()->getColorSelect('Social media color', 'socialmediaColor' , '737578')
+            . FormGenerator::getInstance()->getColorSelect('Social media color', 'socialmediaColor' , '61656b')
             . getPanelEnd();
         return $html;
     }
