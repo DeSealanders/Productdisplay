@@ -28,9 +28,11 @@ $(document).ready(function () {
     // Show/hide for elements (header, footer etc)
     $(document).on('click', '.elementHeader', function(event){
         event.preventDefault();
-        $(this).find('.icon').first().toggleClass("glyphicon glyphicon-plus");
-        $(this).find('.icon').first().toggleClass("glyphicon glyphicon-minus");
-        $(this).next('.element').slideToggle('slow');
+        $(this).next('.element').slideToggle('slow', 'swing', function() {
+            // Switch the minus and the plus when the toggle is finished
+            $(this).prev('.elementHeader').find('.icon').first().toggleClass("glyphicon glyphicon-minus");
+            $(this).prev('.elementHeader').find('.icon').first().toggleClass("glyphicon glyphicon-plus");
+        });
     });
 
     // Hide all elements initially

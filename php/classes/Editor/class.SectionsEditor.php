@@ -11,6 +11,7 @@ class SectionsEditor {
         echo getFormStart();
         echo $this->getTextEdit();
         echo $this->getColorEdit();
+        // TODO Sections editor
         echo getFormEnd();
         echo getElementEnd();
     }

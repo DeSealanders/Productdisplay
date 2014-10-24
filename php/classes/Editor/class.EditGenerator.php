@@ -19,6 +19,10 @@ class EditGenerator {
         return $instance;
     }
 
+    public function getMiscEditor() {
+        echo EditorFactory::getInstance()->getMiscEditor()->getHtml();
+    }
+
     public function getHeaderEditor() {
         echo EditorFactory::getInstance()->getHeaderEditor()->getHtml();
     }

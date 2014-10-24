@@ -11,6 +11,7 @@ class FooterEditor {
         echo getFormStart();
         echo $this->getTextEdit();
         echo $this->getColorEdit();
+        // TODO social media elements
         echo getFormEnd();
         echo getElementEnd();
     }

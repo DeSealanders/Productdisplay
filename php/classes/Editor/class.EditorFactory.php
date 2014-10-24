@@ -42,4 +42,11 @@ class EditorFactory {
         return $editors['footer'];
     }
 
+    public function getMiscEditor() {
+        if(!isset($editors['misc'])) {
+            $editors['misc'] = new MiscEditor();
+        }
+        return $editors['misc'];
+    }
+
 } 
