@@ -41,13 +41,11 @@ header nav a:hover {
 }
 
 <?php /* Page sections */ ?>
-div.even,
-footer.even {
+div.even {
     color: <?php echo $textColorEven; ?>;
     background-color: <?php echo $colorEven;?>;
 }
-div.odd,
-footer.odd {
+div.odd {
     color: <?php echo $textColorOdd; ?>;
     background-color: <?php echo $colorOdd;?>;
 }

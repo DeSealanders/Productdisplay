@@ -76,6 +76,18 @@ div.even h2, div.odd h2 {
 div.spaced {
     padding-top: 30px;
 }
+div.odd a {
+    color: #428bca
+}
+div.odd a:hover {
+    color: #1c94c4;
+}
+div.even a {
+    color: #aaaaaa;
+}
+div.even a:hover {
+    color: ghostwhite;
+}
 
 /*
 Footer

@@ -19,8 +19,8 @@ class FooterEditor {
 
     public function getTextEdit() {
         $html = getPanelStart('Text')
-        . FormGenerator::getInstance()->getTextField('Footer text', 'headerTitle' , 'Rookworstwaren©')
-        . FormGenerator::getInstance()->getColorSelect('Footer text color', 'headerTextColor' , '2c3e50')
+        . FormGenerator::getInstance()->getTextField('Footer text', 'footerTitle' , 'Gemaakt door Peter Ton ©')
+        . FormGenerator::getInstance()->getColorSelect('Footer text color', 'footerTextColor' , '2c3e50')
         . getPanelEnd();
         return $html;
     }

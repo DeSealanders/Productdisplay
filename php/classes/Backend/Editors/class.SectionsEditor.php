@@ -35,7 +35,7 @@ class SectionsEditor {
 
     public function getSectionsEdit() {
         $html = getPanelStart('Sections')
-        . FormGenerator::getInstance()->getTextEditor('Section 1 html', 'section1html' , '<h2>Hoi</h2><p>Dit is een test</p>')
+        . FormGenerator::getInstance()->getTextEditor('Section 1 html', 'section1html' , '<h2>Nog niet af</h2><p>De content uit dit component kan later aan de voorkant gekoppeld worden</p>')
         . getPanelEnd();
         return $html;
     }
