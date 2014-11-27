@@ -69,3 +69,11 @@ footer ul li a {
 footer {
     color: <?php echo $footerTextColor; ?>
 }
+
+<?php /* Contact */ ?>
+div.even#Contact a {
+    color: <?php echo $textColorEven; ?>;
+}
+div.odd#Contact a {
+    color: <?php echo $textColorOdd; ?>;
+}

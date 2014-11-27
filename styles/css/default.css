@@ -75,6 +75,7 @@ div.even h2, div.odd h2 {
 }
 div.spaced {
     padding-top: 30px;
+    padding-bottom: 30px;
 }
 div.odd a {
     color: #428bca
@@ -106,5 +107,48 @@ footer ul li {
     padding-right: 20px;
 }
 footer ul li a:hover {
+    text-decoration: none;
+}
+
+/**
+ * Custom styles
+ */
+.right {
+    float: right;
+    overflow: hidden;
+}
+.left {
+    float: left;
+    overflow: hidden;
+}
+
+/**
+ * Home
+ */
+#Home .text {
+    padding-right: 5%;
+}
+
+/**
+ * Contact
+ */
+#Contact {
+    padding-right: 20%;
+    padding-left: 20%;
+    overflow: hidden;
+}
+#Contact ul {
+    list-style-type:  none;
+    padding-left: 0px;
+}
+#Contact ul span.text {
+    padding-bottom: 30px;
+    vertical-align: middle;
+}
+#Contact ul li {
+    padding-bottom: 10px;
+}
+#Contact a:hover,
+#Contact a:focus {
     text-decoration: none;
 }
