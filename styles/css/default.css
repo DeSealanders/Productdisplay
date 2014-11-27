@@ -13,6 +13,10 @@ div, p {
     margin: 0;
 }
 
+h2.fa {
+    font-size: 30px;
+}
+
 /*
 Header
 */
@@ -115,18 +119,15 @@ footer ul li a:hover {
  */
 .right {
     float: right;
-    overflow: hidden;
+    padding-left: 20px;
 }
 .left {
     float: left;
-    overflow: hidden;
+    padding-right: 20px;
 }
-
-/**
- * Home
- */
-#Home .text {
-    padding-right: 5%;
+img.thumb {
+    border: 1px solid gray;
+    border-radius: 20px;
 }
 
 /**
