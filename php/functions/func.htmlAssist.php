@@ -11,8 +11,8 @@ function getPanelEnd() {
     return '</div></div>';
 }
 
-function getFormStart() {
-    $html = '<form role="form" class="form-horizontal">';
+function getFormStart($formId) {
+    $html = '<form id="' . $formId . '" role="form" class="form-horizontal">';
     return $html;
 }
 

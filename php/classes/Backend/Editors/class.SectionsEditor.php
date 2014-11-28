@@ -2,17 +2,19 @@
 
 class SectionsEditor {
 
-    public function __construct() {
+    private $sections;
 
+    public function __construct() {
+        $this->sections = ElementFactory::getInstance()->getSections();
     }
 
     public function getHtml() {
         echo getElementStart('Sections');
-        echo getFormStart();
-        echo $this->getTextEdit();
-        echo $this->getColorEdit();
-        // TODO Sections editor
+        echo getFormStart('sections');
+        //echo $this->getTextEdit();
+        //echo $this->getColorEdit();
         echo $this->getSectionsEdit();
+        //echo $this->getSectionsSave();
         echo getFormEnd();
         echo getElementEnd();
     }
@@ -34,9 +36,15 @@ class SectionsEditor {
     }
 
     public function getSectionsEdit() {
-        $html = getPanelStart('Sections')
-        . FormGenerator::getInstance()->getTextEditor('Section 1 html', 'section1html' , '<h2>Nog niet af</h2><p>De content uit dit component kan later aan de voorkant gekoppeld worden</p>')
-        . getPanelEnd();
+        $html = getPanelStart('Sections');
+        foreach($this->sections->getSections() as $sectionNr => $section) {
+            $html .= FormGenerator::getInstance()->getTextEditor($section->getTitle(), $section->getId() , $section->getContent());
+        }
+        $html .= getPanelEnd();
         return $html;
+    }
+
+    public function getSectionsSave() {
+        return FormGenerator::getInstance()->getButton('Opslaan', 'save');
     }
 } 

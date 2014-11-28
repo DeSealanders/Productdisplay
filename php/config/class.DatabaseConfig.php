@@ -31,9 +31,9 @@ class DatabaseConfig {
 
     private function getLiveDetails() {
         return array(
-            'password' => 'abc',
-            'username' => 'abc',
-            'database' => 'abc',
+            'password' => 'Rgpqy63lD',
+            'username' => 'tonpeter_democms',
+            'database' => 'tonpeter_democms',
             'address' => 'localhost'
         );
     }

@@ -11,7 +11,15 @@ $(function() {
                 css: "custom_disk_button",
                 text: "Save",
                 action: function(btn) {
-                    alert('SAVE!\n\n' + this.toHtmlString());
+                    $.post("save.php", {
+                        sectionId: this.getTextareaId(),
+                        sectionData: this.toHtmlString()
+                    })
+
+                        // Alert return data
+                        .done(function (data) {
+                            //alert( "Data Loaded: " + data );
+                        });
                 }
             }]
         ],

@@ -8,7 +8,7 @@ class FooterEditor {
 
     public function getHtml() {
         echo getElementStart('Footer');
-        echo getFormStart();
+        echo getFormStart('footer');
         echo $this->getTextEdit();
         echo $this->getColorEdit();
         echo $this->getSocialMediaEdit();

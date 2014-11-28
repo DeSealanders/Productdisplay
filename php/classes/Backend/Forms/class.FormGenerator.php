@@ -66,12 +66,19 @@ class FormGenerator {
 
     public function getTextEditor($label, $id, $value) {
         $html = '<div class="form-group">'
-            . '<label class="control-label col-sm-3" for="' . $id . '">' . $label . '</label>'
-            . '<div class="col-sm-8">'
+            . '<label class="control-label col-sm-1" for="' . $id . '">' . $label . '</label>'
+            . '<div class="col-sm-12">'
             . '<textarea class="textEditor" id="' . $id . '" cols="80" rows="15">'
             . $value
             . '</textarea>'
             . '</div></div>';
+        return $html;
+    }
+
+    public function getButton($label, $id) {
+        $html = '<div class="form-group">'
+            . '<button type="submit" id="' . $id . '" class="btn btn-primary col-sm-2">' . $label . '</button>'
+            . '</div>';
         return $html;
     }
 

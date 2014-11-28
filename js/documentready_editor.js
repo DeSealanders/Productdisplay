@@ -36,9 +36,25 @@ $(document).ready(function () {
     });
 
     // Hide all elements initially
-    $('.element').each(function() {
+    /*$('.element').each(function() {
         $(this).hide();
         $(this).prev('.elementHeader').find('.icon').first().toggleClass("glyphicon glyphicon-minus");
         $(this).prev('.elementHeader').find('.icon').first().toggleClass("glyphicon glyphicon-plus");
-    })
+    })*/
+
+    $('#save').click(function() {
+
+        var formResults = '';
+        $.post("save.php", {
+            sectionsdata: formResults,
+            value: 'test2'
+        })
+
+            // Alert return data
+            .done(function (data) {
+                alert( "Data Loaded: " + data );
+            });
+
+        return false;
+    });
 });

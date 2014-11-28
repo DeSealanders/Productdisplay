@@ -24,7 +24,7 @@ class Sections extends Element {
         $this->sections = array();
         if(count($data['sectionData']) > 0) {
             foreach($data['sectionData'] as $section) {
-                $this->sections[] = new Section($section['title'], $section['content'], $section['transition']);
+                $this->sections[] = new Section($section['title'], $section['content'], $section['transition'], $section['id']);
             }
         }
     }
@@ -48,6 +48,10 @@ class Sections extends Element {
             $prevSection = $section;
         }
         return $html;
+    }
+
+    public function getSections() {
+        return $this->sections;
     }
 
     public function getTextColorEven()

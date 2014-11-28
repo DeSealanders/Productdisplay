@@ -308,6 +308,9 @@
             (this.textarea.is(":hidden")) ? this.showHTMLView() : this.hideHTMLView();
         },
 
+        getTextareaId: function() {
+            return this.textarea.attr('id');
+        },
         toHtmlString: function () {
             return this.editor.body.innerHTML;
         },

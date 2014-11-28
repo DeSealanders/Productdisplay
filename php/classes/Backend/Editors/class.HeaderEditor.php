@@ -8,7 +8,7 @@ class HeaderEditor {
 
     public function getHtml() {
         echo getElementStart('Header');
-        echo getFormStart();
+        echo getFormStart('header');
         echo $this->getHeaderEdit();
         echo $this->getMenuEdit();
         echo getFormEnd();

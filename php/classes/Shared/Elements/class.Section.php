@@ -4,13 +4,18 @@ class Section {
     private $content;
     private $title;
     private $transition;
+    private $id;
 
-    public function __construct($title, $content, $transition) {
+    public function __construct($title, $content, $transition, $id) {
         $this->title = $title;
         $this->content = $content;
         $this->transition = $transition;
+        $this->id = $id;
     }
 
+    public function getId() {
+        return $this->id;
+    }
 
     public function getContent()
     {
@@ -40,7 +45,7 @@ class Section {
         }
         $html .= '<div class="' . $class . '" id="' . $this->title. '">';
         $html .= '<h2>' . $this->title . '</h2>';
-        $html .= $this->content;
+        $html .= htmlspecialchars_decode($this->content);
         $html .= '</div>';
 
         if($this->transition == true) {
