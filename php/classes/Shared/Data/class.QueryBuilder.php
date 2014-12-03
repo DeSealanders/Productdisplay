@@ -30,7 +30,7 @@ class QueryBuilder {
      */
     public function build($query) {
 
-        // Check if a select or insert query has to be generated
+        // Check if a select, insert or update query has to be generated
         if($query->hasSelect()) {
             $sql = $this->getSelectPart($query->getSelect());
             $sql .= $this->getFromPart($query->getFrom());
@@ -42,7 +42,6 @@ class QueryBuilder {
         }
         else if($query->hasInsert()) {
             $sql = $this->getInsertPart($query->getInsert());
-            $sql .= $this->getWherePart($query->getWhere());
             return $sql;
         }
         else if($query->hasUpdate()) {
